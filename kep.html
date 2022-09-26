@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="kep.css">
+    <title>Képek</title>
+</head>
+<body>
+    <img id="fotok" src="/kepek/1. kep.jpg" alt="Képek" title="Nyomd meg a gombot a többi kép megtekintéséhez!" width="300" height="300"><br>
+    <button id="valtas">Kép váltás</button>
+    <script>
+        var szam = 0;
+        document.getElementById("valtas").onclick = function (){
+         szam = szam + 1
+          if(szam == 1){
+            document.getElementById("fotok").src='/kepek/2. kep.jpg';
+          } else if(szam == 2){
+            document.getElementById("fotok").src='/kepek/3. kep.jpg';
+          }else{
+            document.getElementById("fotok").src='/kepek/1. kep.jpg';
+            return szam = 0;
+          }
+        }
+    </script>
+</body>
+</html>
