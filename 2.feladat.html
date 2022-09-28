@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>2. Feladat</title>
+    <style>
+        .center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        span{
+            padding-right: 15px;
+        }
+        </style>
 </head>
 <body class="bg-dark">
     
@@ -18,17 +28,24 @@
                 </nav>
             </div>
         </div>
-
-
+        <h1 class="text-light">Film válogató</h1>
+        <br>
     </div>
-    <div   class="text-light">
-    <input type="checkbox" name="sci-fi" id="sci-fi">sci-fi
-    <input type="checkbox" name="akció" id="akcio">akció
-    <input type="checkbox" name="romantika" id="romantika">romantika
-    <input type="checkbox" name="thriller" id="thriller">thriller
-    <input type="checkbox" name="kaland" id="kaland">kaland
+    <div class="text-light text-center">
+    <input type="checkbox" name="sci-fi" id="sci-fi"><span>sci-fi</span>
+    <input type="checkbox" name="akció" id="akcio"><span>akció</span>
+    <input type="checkbox" name="romantika" id="romantika"><span>romantika</span>
+    <input type="checkbox" name="thriller" id="thriller"><span>thriller</span>
+    <input type="checkbox" name="kaland" id="kaland"><span>kaland</span>
+    <input type="checkbox" name="dráma" id="drama"><span>dráma</span>
+    <input type="checkbox" name="vígjáték" id="vigjatek"><span>vígjáték</span>
    </div>
-
-    <button id="valogat">Keresés</button>
+   <br>
+   <div class="center">
+    <button id="valogat" class="button-center">Keresés</button>
+  </div>
+   <br>
+    <p class="text-light text-center" id="filmek">Válassz ki előtte egy műfajt vagy többet!</p>
+    <script src="javascript.js"></script>
 </body>
 </html>
