@@ -1,46 +1,98 @@
-                      //0                   //1                         //2                     //3                     //4                     //5                    
-let evek = ["Megjelenési év: 2009", "Megjelenési év: 2010", "Megjelenési év: 2011", "Megjelenési év: 2012", "Megjelenési év: 2013", "Megjelenési év: 2014",  
-          //6                      //7                   //8                     //9
-"Megjelenési év: 2015", "Megjelenési év: 2016", "Megjelenési év: 2018", "Megjelenési év: 2019"]
-
-let filmek = ["Cím: Csillagok között", "Cím: Mentőexpedíció", "Cím: A szem tükrében", "Cím: Teljesen idegenek", "Cím: Csillagainkban a hiba", 
-"Cím: A sötét lovag: Felemelkedés", "Cím: Mission: Impossible - Utóhatás", "Cím: Egy nap", "Cím: Ezer szó", "Cím: Másnaposok", "Cím: Viharsziget",
-"Cím: Családi üzelmek", "Cím: Low Tide", "Cím: Joker" ]
-
-
-let drama = ["Cím: Csillagok között", "Cím: Mentőexpedíció", "Cím: A szem tükrében", "Cím: Csillagainkban a hiba", "Cím: Egy nap", 
-"Cím: Low Tide", "Cím: A segítség", "Cím: Teljesen idegenek", "Cím: Joker", "Cím: Ezer szó"]
-
-
-//`dőlt idézőjelen belül szöveg, ha valtozót akarunk hívni csak ${valtozo} különítjük dőlt idéző jelen belül`
-// Egy teljes szöveg hívása
-let kiir = `${drama[0]} <br> ${evek[5]} <br><br> ${drama[1]} <br> ${evek[6]} <br><br> ${drama[2]} <br> ${evek[5]} <br><br> ${drama[3]} <br> ${evek[5]} 
-<br><br> ${drama[4]} <br> ${evek[2]} <br><br> ${drama[5]} <br> ${evek[8]} <br><br> ${drama[6]} <br> ${evek[2]} <br><br> ${drama[7]} <br> ${evek[7]} <br><br> ${drama[8]} <br> ${evek[9]}`
-
-/*
-document.write(`${drama[0]} <br> ${evek[5]} <br><br> ${drama[1]} <br> ${evek[6]} <br><br> ${drama[2]} <br> ${evek[5]} <br><br> ${drama[3]} <br> ${evek[5]} 
-<br><br> ${drama[4]} <br> ${evek[2]} <br><br> ${drama[5]} <br> ${evek[9]} <br><br> ${drama[6]} <br> ${evek[2]} <br><br> ${drama[7]} <br> ${evek[7]}`)
-Működött!
-
-let scifi =[ filmek[0], filmek[1], filmek[2] ]
-document.write(scifi[0])
-Ez egy bonyolultabb megoldás, inkább felejtsük!
-*/
-
-document.write(`${filmek[0]} <br> ${evek[5]} <br><br> ${filmek[1]} <br> ${evek[6]} <br><br> ${filmek[2]} <br> ${evek[5]} <br><br> ${filmek[3]} <br> ${evek[5]} <br><br> ${filmek[4]} <br> ${evek[2]} <br><br> ${filmek[5]} <br> ${evek[8]} <br><br> ${filmek[6]} <br> ${evek[2]} <br><br> ${filmek[7]} <br> ${evek[7]} <br><br> ${filmek[8]} <br> ${evek[9]}`)
-
-
-document.getElementById("valogat").onclick = function(){
-    if(document.getElementById("sci-fi").checked){
-        document.getElementById("valogat").innerHTML = `${filmek[0]} <br> ${evek[5]} <br> ${filmek[1]} <br> ${evek[6]} <br> ${filmek[2]}`
-    }
-    if(document.getElementById("drama").checked){
-        document.getElementById("valogat").innerHTML = `${drama[0]} <br> ${evek[5]} <br><br> ${drama[1]} <br> ${evek[6]} <br><br> ${drama[2]} <br> ${evek[5]} <br><br> ${drama[3]} <br> ${evek[5]} 
-        <br><br> ${drama[4]} <br> ${evek[2]} <br><br> ${drama[5]} <br> ${evek[8]} <br><br> ${drama[6]} <br> ${evek[2]} <br><br> ${drama[7]} <br> ${evek[7]} <br><br> ${drama[8]} <br> ${evek[9]}`
-    }
-    if(document.getElementById("akcio").checked){
-        document.getElementById("valogat").innerHTML = ``
-    }
-
-} 
-
+let filmek = [ "Cím: Csillagok között <br> Megjelenési év: 2014",   //0
+               "Cím: Mentőexpedíció <br> Megjelenési év: 2015",     //1
+               "Cím: A szem tükrében <br> Megjelenési év: 2015",    //2
+               "Cím: Teljesen idegenek <br>  Megjelenési év: 2016", //3
+               "Cím: Csillagainkban a hiba <br> Megjelenési év: 2014",//4 
+               "Cím: A sötét lovag: Felemelkedés <br> Megjelenési év: 2012",//5 
+               "Cím: Mission: Impossible - Utóhatás <br> Megjelenési év: 2018",//6 
+               "Cím: Egy nap <br> Megjelenési év: 2011", //7
+               "Cím: Ezer szó <br> Megjelenési év: 2012 ",//8
+               "Cím: Másnaposok <br> Megjelenési év: 2009", //9
+               "Cím: Viharsziget <br> Megjelenési év: 2010",//10
+               "Cím: A segítség <br> Megjelenési év: 2011",//11
+               "Cím: Családi üzelmek <br> Megjelenési év: 2013",//12 
+               "Cím: Low Tide <br> Megjelenési év: 2019", //13
+               "Cím: Joker <br> megjelenési év: 2019" ] //14
+            //`dőlt idézőjelen belül szöveg, ha valtozót akarunk hívni csak ${valtozo} különítjük dőlt idéző jelen belül`
+            
+            document.getElementById("valogat").onclick = function(){
+                if(document.getElementById("sci-fi").checked){
+                    document.getElementById("filmek").innerHTML = `${filmek[0]} <br><br> ${filmek[1]}  <br><br> ${filmek[2]}`
+                }else{
+                    document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                }
+                if(document.getElementById("drama").checked){
+                    document.getElementById("filmek").innerHTML = `${filmek[0]} <br><br> ${filmek[1]}   <br><br> ${filmek[2]} <br><br> ${filmek[4]} 
+                    <br><br> ${filmek[3]} <br><br> ${filmek[14]} <br><br> ${filmek[11]}  <br><br> ${filmek[13]} <br><br> ${filmek[8]}`
+                }else{
+                    document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                }
+                if(document.getElementById("akcio").checked){
+                    document.getElementById("filmek").innerHTML = `${filmek[6]} <br><br> ${filmek[5]}`
+                }else{
+                    document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                }
+                if(document.getElementById("kaland").checked){
+                    document.getElementById("filmek").innerHTML = `${filmek[0]} <br><br> ${filmek[1]} <br><br> ${filmek[5]} <br><br> ${filmek[6]}`
+                }else{
+                    document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                }
+                if(document.getElementById("thriller").checked){
+                    document.getElementById("filmek").innerHTML = `${filmek[6]} <br><br> ${filmek[10]} <br><br> ${filmek[13]} <br><br> ${filmek[14]}`
+                }else{
+                    document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                }
+                if(document.getElementById("vigjatek").checked){
+                    document.getElementById("filmek").innerHTML = `${filmek[12]} <br><br> ${filmek[8]} <br><br> ${filmek[3]}`
+                }else{
+                    document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                }
+                if(document.getElementById("romantika").checked){
+                    document.getElementById("filmek").innerHTML = `${filmek[7]} <br><br> ${filmek[3]}`
+                }else{
+                    document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                }
+                if(document.getElementById("krimi").checked){
+                    document.getElementById("filmek").innerHTML = `${filmek[14]} <br><br> ${filmek[12]}`
+                }else{
+                    document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                }
+                if(document.getElementById("sci-fi").checked){
+                   if(document.getElementById("drama").checked){
+                    document.getElementById("filmek").innerHTML = `${filmek[0]} <br><br> ${filmek[1]}   <br><br> ${filmek[2]}`
+                    }else{
+                        document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                    }
+                }
+                if(document.getElementById("sci-fi").checked){
+                    if(document.getElementById("akcio").checked){
+                        alert("Sajnos nincs ilyen fajta filmünk MÉG. Válassz valami mást.")
+                        document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                    }
+                }
+                if(document.getElementById("sci-fi").checked){
+                    if(document.getElementById("kaland").checked){
+                        document.getElementById("filmek").innerHTML = `${filmek[0]} <br><br> ${filmek[1]}`
+                    }
+                }else{
+                    document.getElementById("filmek").innerHTML = ""
+                }
+                if(document.getElementById("sci-fi").checked){
+                    if(document.getElementById("thriller").checked){
+                        alert("Sajnos nincs ilyen fajta filmünk MÉG.")
+                        document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                    }
+                }
+                if(document.getElementById("sci-fi").checked){
+                    if(document.getElementById("vigjatek").checked){
+                        alert("Sajnos nincs ilyen fajta filmünk MÉG.")
+                        document.getElementById("filmek").innerHTML = "Válassz ki előtte egy műfajt vagy többet!"
+                    }
+                }
+                if(document.getElementById("sci-fi").checked){
+                    if(document.getElementById("romantika").checked){
+                        document.getElementById("filmek").innerHTML = `${filmek[2]}`
+                    }
+                }
+        } 
+            
