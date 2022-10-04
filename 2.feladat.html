@@ -6,19 +6,493 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>2. Feladat</title>
-    <style>
-        .center {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        span{
-            padding-right: 5px;
-        }
-    </style>
 </head>
 <body class="bg-dark">
-    
+
+    <script>
+
+        const film1 ={cim: "Cím: Csillagok között <br> Megjelenési év: 2014 <br><br>", kat1:"sci-fi", kat2:"dráma", kat3:"kaland"}
+        const film2 ={cim: "Cím: Mentőexpedíció <br> Megjelenési év: 2015 <br><br>", kat1:"sci-fi", kat2:"dráma", kat3: "kaland"}
+        const film3 ={cim: "Cím: A szem tükrében <br> Megjelenési év: 2015 <br><br>", kat1:"sci-fi", kat2:"dráma", kat3: "romantika"}
+        const film4 ={cim: "Cím: Teljesen idegenek <br>  Megjelenési év: 2016 <br><br>", kat1: "vígjáték", kat2:"dráma" }
+        const film5 ={cim: "Cím: Csillagainkban a hiba <br> Megjelenési év: 2014 <br><br>", kat1:"romantika",kat2:"dráma" }
+        const film6 ={cim: "Cím: A sötét lovag: Felemelkedés <br> Megjelenési év: 2012 <br><br>", kat1:"akció",kat2:"kaland"}
+        const film7 ={cim: "Cím: Mission: Impossible - Utóhatás <br> Megjelenési év: 2018 <br><br>", kat1:"akció", kat2:"thriller", kat3:"kaland"}
+        const film8 ={cim: "Cím: Egy nap <br> Megjelenési év: 2011 <br><br>", kat1:"romantika", kat2:"dráma"}
+        const film9 ={cim: "Cím: Ezer szó <br> Megjelenési év: 2012 <br><br>", kat1:"vígjáték", kat2:"dráma"}
+        const film10 ={cim: "Cím: Másnaposok <br> Megjelenési év: 2009 <br><br>", kat1:"vígjáték"}
+        const film11 ={cim: "Cím: Viharsziget <br> Megjelenési év: 2010 <br><br>", kat1:"thriller"}
+        const film12 ={cim: "Cím: A segítség <br> Megjelenési év: 2011 <br><br>", kat1:"dráma"}
+        const film13 ={cim: "Cím: Családi üzelmek <br> Megjelenési év: 2013 <br><br>", kat1:"vígjáték", kat2:"krimi"}
+        const film14 ={cim: "Cím: Low Tide <br> Megjelenési év: 2019 <br><br> ", kat1:"thriller", kat2:"dráma"}
+        const film15 ={cim: "Cím: Joker <br> megjelenési év: 2019 <br><br>", kat1:"thriller", kat2:"dráma", kat3:"krimi"}
+
+        const filmek = [film1,film2,film3,film4,film5,film6,film7,film8,film9,film10,film11,film12, film13, film14, film15]
+
+        let kiiras = ""
+
+        let kereseskat1 = ""
+        let kereseskat2 = ""
+        let nokereseskat1 = ""
+        let nokereseskat2 = ""
+
+        function sci_fi(){
+            if(kereseskat1 == "sci-fi" || kereseskat2=="sci-fi"){
+                if(kereseskat1 == "sci-fi"){
+				kereseskat1 = ""                          
+				}
+				else  if(kereseskat2 == "sci-fi"){
+				kereseskat2 = ""                         
+				}
+				document.getElementById("sci_fi").style.backgroundColor = "white"
+                document.getElementById("sci_fi_2").style.backgroundColor = "white"		
+				console.log(kereseskat1 +" "+kereseskat2)			
+                }
+                else if(kereseskat1 == "" || kereseskat2==""){
+                if(kereseskat1 == ""){
+				kereseskat1 = "sci-fi"                          
+				}
+				else if(kereseskat2 == ""){
+				kereseskat2 = "sci-fi"                         
+				}           
+                document.getElementById("sci_fi").style.backgroundColor = "blue"
+                document.getElementById("sci_fi_2").style.backgroundColor = "#212529"
+				console.log(kereseskat1 +" "+kereseskat2)
+            }            
+        }
+
+        function sci_fi_2(){
+            if(nokereseskat1 == "sci-fi" || nokereseskat2=="sci-fi"){
+                if(nokereseskat1 == "sci-fi"){
+                nokereseskat1 = ""                          
+				}
+				else  if(nokereseskat2 == "sci-fi"){
+                nokereseskat2 = ""                         
+				}
+				document.getElementById("sci_fi").style.backgroundColor = "white"
+                document.getElementById("sci_fi_2").style.backgroundColor = "white"		
+				console.log(nokereseskat1 +" "+nokereseskat2)			
+                }
+                else if(nokereseskat1 == "" || nokereseskat2==""){
+                if(nokereseskat1 == ""){
+                nokereseskat1 = "sci-fi"                          
+				}
+				else if(nokereseskat2 == ""){
+                nokereseskat2 = "sci-fi"                         
+				}           
+                document.getElementById("sci_fi").style.backgroundColor = "#212529"
+                document.getElementById("sci_fi_2").style.backgroundColor = "red"
+				console.log(nokereseskat1 +" "+nokereseskat2)
+            } 
+        }
+
+        function drama(){
+            if(kereseskat1 == "dráma" || kereseskat2=="dráma"){
+                if(kereseskat1 == "dráma"){
+				kereseskat1 = ""                          
+				}
+				else  if(kereseskat2 == "dráma"){
+				kereseskat2 = ""                         
+				}
+				document.getElementById("drama").style.backgroundColor = "white"
+                document.getElementById("drama_2").style.backgroundColor = "white"		
+				console.log(kereseskat1 +" "+kereseskat2)			
+                }
+                else if(kereseskat1 == "" || kereseskat2==""){
+                if(kereseskat1 == ""){
+				kereseskat1 = "dráma"                          
+				}
+				else if(kereseskat2 == ""){
+				kereseskat2 = "dráma"                         
+				}           
+                document.getElementById("drama").style.backgroundColor = "blue"
+                document.getElementById("drama_2").style.backgroundColor = "#212529"
+				console.log(kereseskat1 +" "+kereseskat2)
+            }
+        }
+
+        function drama_2(){
+            if(nokereseskat1 == "dráma" || nokereseskat2=="dráma"){
+                if(nokereseskat1 == "dráma"){
+                nokereseskat1 = ""                          
+				}
+				else  if(nokereseskat2 == "dráma"){
+                nokereseskat2 = ""                         
+				}
+				document.getElementById("drama").style.backgroundColor = "white"
+                document.getElementById("drama_2").style.backgroundColor = "white"		
+				console.log(nokereseskat1 +" "+nokereseskat2)			
+                }
+                else if(nokereseskat1 == "" || nokereseskat2==""){
+                if(nokereseskat1 == ""){
+                nokereseskat1 = "dráma"                          
+				}
+				else if(nokereseskat2 == ""){
+                nokereseskat2 = "dráma"                         
+				}           
+                document.getElementById("drama").style.backgroundColor = "#212529"
+                document.getElementById("drama_2").style.backgroundColor = "red"
+				console.log(nokereseskat1 +" "+nokereseskat2)
+            }
+        }
+
+        function kaland(){
+            if(kereseskat1 == "kaland" || kereseskat2=="kalans"){
+                if(kereseskat1 == "kaland"){
+				kereseskat1 = ""                          
+				}
+				else  if(kereseskat2 == "kaland"){
+				kereseskat2 = ""                         
+				}
+				document.getElementById("kaland").style.backgroundColor = "white"
+                document.getElementById("kaland_2").style.backgroundColor = "white"		
+				console.log(kereseskat1 +" "+kereseskat2)			
+                }
+                else if(kereseskat1 == "" || kereseskat2==""){
+                if(kereseskat1 == ""){
+				kereseskat1 = "kaland"                          
+				}
+				else if(kereseskat2 == ""){
+				kereseskat2 = "kaland"                         
+				}           
+                document.getElementById("kaland").style.backgroundColor = "blue"
+                document.getElementById("kaland_2").style.backgroundColor = "#212529"
+				console.log(kereseskat1 +" "+kereseskat2)
+            }
+        }
+
+        function kaland_2(){
+            if(nokereseskat1 == "kaland" || nokereseskat2=="kaland"){
+                if(nokereseskat1 == "kaland"){
+                nokereseskat1 = ""                          
+				}
+				else  if(nokereseskat2 == "kaland"){
+                nokereseskat2 = ""                         
+				}
+				document.getElementById("kaland").style.backgroundColor = "white"
+                document.getElementById("kaland_2").style.backgroundColor = "white"		
+				console.log(nokereseskat1 +" "+nokereseskat2)			
+                }
+                else if(nokereseskat1 == "" || nokereseskat2==""){
+                if(nokereseskat1 == ""){
+                nokereseskat1 = "kaland"                          
+				}
+				else if(nokereseskat2 == ""){
+                nokereseskat2 = "kaland"                         
+				}           
+                document.getElementById("kaland").style.backgroundColor = "#212529"
+                document.getElementById("kaland_2").style.backgroundColor = "red"
+				console.log(nokereseskat1 +" "+nokereseskat2)
+            }
+        }
+
+        function akcio(){
+            if(kereseskat1 == "akció" || kereseskat2=="akció"){
+                if(kereseskat1 == "akció"){
+				kereseskat1 = ""                          
+				}
+				else  if(kereseskat2 == "akció"){
+				kereseskat2 = ""                         
+				}
+				document.getElementById("akcio").style.backgroundColor = "white"
+                document.getElementById("akcio_2").style.backgroundColor = "white"		
+				console.log(kereseskat1 +" "+kereseskat2)			
+                }
+                else if(kereseskat1 == "" || kereseskat2==""){
+                if(kereseskat1 == ""){
+				kereseskat1 = "akció"                          
+				}
+				else if(kereseskat2 == ""){
+				kereseskat2 = "akció"                         
+				}           
+                document.getElementById("akcio").style.backgroundColor = "blue"
+                document.getElementById("akcio_2").style.backgroundColor = "#212529"
+				console.log(kereseskat1 +" "+kereseskat2)
+            }
+        }
+
+        function akcio_2(){
+            if(nokereseskat1 == "akció" || nokereseskat2=="akció"){
+                if(nokereseskat1 == "akció"){
+                nokereseskat1 = ""                          
+				}
+				else  if(nokereseskat2 == "akció"){
+                nokereseskat2 = ""                         
+				}
+				document.getElementById("akcio").style.backgroundColor = "white"
+                document.getElementById("akcio_2").style.backgroundColor = "white"		
+				console.log(nokereseskat1 +" "+nokereseskat2)			
+                }
+                else if(nokereseskat1 == "" || nokereseskat2==""){
+                if(nokereseskat1 == ""){
+                nokereseskat1 = "akció"                          
+				}
+				else if(nokereseskat2 == ""){
+                nokereseskat2 = "akció"                         
+				}           
+                document.getElementById("akcio").style.backgroundColor = "#212529"
+                document.getElementById("akcio_2").style.backgroundColor = "red"
+				console.log(nokereseskat1 +" "+nokereseskat2)
+            }
+        }
+
+        function romantika(){
+            if(kereseskat1 == "romantika" || kereseskat2=="romantika"){
+                if(kereseskat1 == "romantika"){
+				kereseskat1 = ""                          
+				}
+				else  if(kereseskat2 == "romantika"){
+				kereseskat2 = ""                         
+				}
+				document.getElementById("romantika").style.backgroundColor = "white"
+                document.getElementById("romantika_2").style.backgroundColor = "white"		
+				console.log(kereseskat1 +" "+kereseskat2)			
+                }
+                else if(kereseskat1 == "" || kereseskat2==""){
+                if(kereseskat1 == ""){
+				kereseskat1 = "romantika"                          
+				}
+				else if(kereseskat2 == ""){
+				kereseskat2 = "romantika"                         
+				}           
+                document.getElementById("romantika").style.backgroundColor = "blue"
+                document.getElementById("romantika_2").style.backgroundColor = "#212529"
+				console.log(kereseskat1 +" "+kereseskat2)
+            }
+        }
+
+        function romantika_2(){
+            if(nokereseskat1 == "romantika" || nokereseskat2=="romantika"){
+                if(nokereseskat1 == "romantika"){
+                nokereseskat1 = ""                          
+				}
+				else  if(nokereseskat2 == "romantika"){
+                nokereseskat2 = ""                         
+				}
+				document.getElementById("romantika").style.backgroundColor = "white"
+                document.getElementById("romantika_2").style.backgroundColor = "white"		
+				console.log(nokereseskat1 +" "+nokereseskat2)			
+                }
+                else if(nokereseskat1 == "" || nokereseskat2==""){
+                if(nokereseskat1 == ""){
+                nokereseskat1 = "romantika"                          
+				}
+				else if(nokereseskat2 == ""){
+                nokereseskat2 = "romantika"                         
+				}           
+                document.getElementById("romantika").style.backgroundColor = "#212529"
+                document.getElementById("romantika_2").style.backgroundColor = "red"
+				console.log(nokereseskat1 +" "+nokereseskat2)
+            }
+        }
+
+        function thriller(){
+            if(kereseskat1 == "thriller" || kereseskat2=="thriller"){
+                if(kereseskat1 == "thriller"){
+				kereseskat1 = ""                          
+				}
+				else  if(kereseskat2 == "thriller"){
+				kereseskat2 = ""                         
+				}
+				document.getElementById("thriller").style.backgroundColor = "white"
+                document.getElementById("thriller_2").style.backgroundColor = "white"		
+				console.log(kereseskat1 +" "+kereseskat2)			
+                }
+                else if(kereseskat1 == "" || kereseskat2==""){
+                if(kereseskat1 == ""){
+				kereseskat1 = "thriller"                          
+				}
+				else if(kereseskat2 == ""){
+				kereseskat2 = "thriller"                         
+				}           
+                document.getElementById("thriller").style.backgroundColor = "blue"
+                document.getElementById("thriller_2").style.backgroundColor = "#212529"
+				console.log(kereseskat1 +" "+kereseskat2)
+            }
+        }
+
+        function thriller_2(){
+            if(nokereseskat1 == "thriller" || nokereseskat2=="thriller"){
+                if(nokereseskat1 == "thriller"){
+                nokereseskat1 = ""                          
+				}
+				else  if(nokereseskat2 == "thriller"){
+                nokereseskat2 = ""                         
+				}
+				document.getElementById("thriller").style.backgroundColor = "white"
+                document.getElementById("thriller_2").style.backgroundColor = "white"		
+				console.log(nokereseskat1 +" "+nokereseskat2)			
+                }
+                else if(nokereseskat1 == "" || nokereseskat2==""){
+                if(nokereseskat1 == ""){
+                nokereseskat1 = "thriller"                          
+				}
+				else if(nokereseskat2 == ""){
+                nokereseskat2 = "thriller"                         
+				}           
+                document.getElementById("thriller").style.backgroundColor = "#212529"
+                document.getElementById("thriller_2").style.backgroundColor = "red"
+				console.log(nokereseskat1 +" "+nokereseskat2)
+            }
+        }
+
+        function krimi(){
+            if(kereseskat1 == "krimi" || kereseskat2=="krimi"){
+                if(kereseskat1 == "krimi"){
+				kereseskat1 = ""                          
+				}
+				else  if(kereseskat2 == "krimi"){
+				kereseskat2 = ""                         
+				}
+				document.getElementById("krimi").style.backgroundColor = "white"
+                document.getElementById("krimi_2").style.backgroundColor = "white"		
+				console.log(kereseskat1 +" "+kereseskat2)			
+                }
+                else if(kereseskat1 == "" || kereseskat2==""){
+                if(kereseskat1 == ""){
+				kereseskat1 = "krimi"                          
+				}
+				else if(kereseskat2 == ""){
+				kereseskat2 = "krimi"                         
+				}           
+                document.getElementById("krimi").style.backgroundColor = "blue"
+                document.getElementById("krimi_2").style.backgroundColor = "#212529"
+				console.log(kereseskat1 +" "+kereseskat2)
+            }
+        }
+
+        function krimi_2(){
+            if(nokereseskat1 == "krimi" || nokereseskat2=="krimi"){
+                if(nokereseskat1 == "krimi"){
+                nokereseskat1 = ""                          
+				}
+				else  if(nokereseskat2 == "krimi"){
+                nokereseskat2 = ""                         
+				}
+				document.getElementById("krimi").style.backgroundColor = "white"
+                document.getElementById("krimi_2").style.backgroundColor = "white"		
+				console.log(nokereseskat1 +" "+nokereseskat2)			
+                }
+                else if(nokereseskat1 == "" || nokereseskat2==""){
+                if(nokereseskat1 == ""){
+                nokereseskat1 = "krimi"                          
+				}
+				else if(nokereseskat2 == ""){
+                nokereseskat2 = "krimi"                         
+				}           
+                document.getElementById("krimi").style.backgroundColor = "#212529"
+                document.getElementById("krimi_2").style.backgroundColor = "red"
+				console.log(nokereseskat1 +" "+nokereseskat2)
+            }
+        }
+
+        function vigjatek(){
+            if(kereseskat1 == "vígjáték" || kereseskat2=="vígjáték"){
+                if(kereseskat1 == "vígjáték"){
+				kereseskat1 = ""                          
+				}
+				else  if(kereseskat2 == "vígjáték"){
+				kereseskat2 = ""                         
+				}
+				document.getElementById("vigjatek").style.backgroundColor = "white"
+                document.getElementById("vigjatek_2").style.backgroundColor = "white"		
+				console.log(kereseskat1 +" "+kereseskat2)			
+                }
+                else if(kereseskat1 == "" || kereseskat2==""){
+                if(kereseskat1 == ""){
+				kereseskat1 = "vígjáték"                          
+				}
+				else if(kereseskat2 == ""){
+				kereseskat2 = "vígjáték"                         
+				}           
+                document.getElementById("vigjatek").style.backgroundColor = "blue"
+                document.getElementById("vigjatek_2").style.backgroundColor = "#212529"
+				console.log(kereseskat1 +" "+kereseskat2)
+            }
+        }
+
+        function vigjatek_2(){
+            if(nokereseskat1 == "vígjáték" || nokereseskat2=="vígjáték"){
+                if(nokereseskat1 == "vígjáték"){
+                nokereseskat1 = ""                          
+				}
+				else  if(nokereseskat2 == "vígjáték"){
+                nokereseskat2 = ""                         
+				}
+				document.getElementById("vigjatek").style.backgroundColor = "white"
+                document.getElementById("vigjatek_2").style.backgroundColor = "white"		
+				console.log(nokereseskat1 +" "+nokereseskat2)			
+                }
+                else if(nokereseskat1 == "" || nokereseskat2==""){
+                if(nokereseskat1 == ""){
+                nokereseskat1 = "vígjáték"                          
+				}
+				else if(nokereseskat2 == ""){
+                nokereseskat2 = "vígjáték"                         
+				}           
+                document.getElementById("vigjatek").style.backgroundColor = "#212529"
+                document.getElementById("vigjatek_2").style.backgroundColor = "red"
+				console.log(nokereseskat1 +" "+nokereseskat2)
+            }
+        }
+
+        function kereses(){
+
+	        for (let x in filmek){
+
+		        if (filmek[x].kat1==kereseskat1 || filmek[x].kat2==kereseskat1 || filmek[x].kat3==kereseskat1){
+                    if (filmek[x].kat1==nokereseskat1 || filmek[x].kat2==nokereseskat1 || filmek[x].kat3==nokereseskat1 || filmek[x].kat1==nokereseskat2 || filmek[x].kat2==nokereseskat2 || filmek[x].kat3==nokereseskat2){
+                        continue;
+                    }
+			        kiiras+="<br>"+filmek[x].cim+"<br>"
+		        }
+		
+		        if(filmek[x].kat1==kereseskat2 || filmek[x].kat2==kereseskat2 || filmek[x].kat3==kereseskat2){
+                    if(filmek[x].kat1==kereseskat1 || filmek[x].kat2==kereseskat1 || filmek[x].kat3==kereseskat1){
+				            continue;
+                            
+                        }
+                        if(filmek[x].kat1==nokereseskat1 || filmek[x].kat2==nokereseskat1 || filmek[x].kat3==nokereseskat1 || filmek[x].kat1==nokereseskat2 || filmek[x].kat2==nokereseskat2 || filmek[x].kat3==nokereseskat2){
+                        continue;
+			            }
+			            kiiras+="<br>"+filmek[x].cim+"<br>"
+		        }	
+	        }
+	        document.getElementById("kereses").innerHTML = kiiras
+        }
+
+        function torles(){
+            if(kiiras != ""){
+
+                document.getElementById("kereses").innerHTML = ""
+
+                kereseskat1 = ""
+                kereseskat2 = ""
+
+                console.log(kereseskat1 +" "+kereseskat2)
+
+                document.getElementById("sci_fi").style.backgroundColor = "white"
+                document.getElementById("drama").style.backgroundColor = "white"
+                document.getElementById("kaland").style.backgroundColor = "white"
+                document.getElementById("akcio").style.backgroundColor = "white"
+                document.getElementById("romantika").style.backgroundColor = "white"
+                document.getElementById("thriller").style.backgroundColor = "white"
+                document.getElementById("krimi").style.backgroundColor = "white"
+                document.getElementById("vigjatek").style.backgroundColor = "white"
+
+                document.getElementById("sci_fi_2").style.backgroundColor = "white"
+                document.getElementById("drama_2").style.backgroundColor = "white"
+                document.getElementById("kaland_2").style.backgroundColor = "white"
+                document.getElementById("akcio_2").style.backgroundColor = "white"
+                document.getElementById("romantika_2").style.backgroundColor = "white"
+                document.getElementById("thriller_2").style.backgroundColor = "white"
+                document.getElementById("krimi_2").style.backgroundColor = "white"
+                document.getElementById("vigjatek_2").style.backgroundColor = "white"
+            }
+        }
+
+    </script>
+
     <div class="container-fluid text-center">
         <div class="row">
             <div class="pt-2 pb-1 border border-4 col-xxl-12 bg-warning">
@@ -28,25 +502,40 @@
                 </nav>
             </div>
         </div>
-        <h1 class="text-light">Film válogató</h1>
-        <br>
+        <div class="row">
+            <div class="col-xxl-12">
+                <div class="col-sm-6 float-start mt-1 mb-4">
+                    <h2 class="text-light mt-4 mb-4">Kedvelt kategóriák</h2>
+                    <button onclick="sci_fi()" class="mt-2 mb-2" id="sci_fi">Sci-fi</button>
+                    <button onclick="drama()" class="mt-2 mb-2" id="drama">Dráma</button>
+                    <button onclick="kaland()" class="mt-2 mb-2" id="kaland">kaland</button>
+                    <button onclick="akcio()" class="mt-2 mb-2" id="akcio">Akció</button>
+                    <button onclick="romantika()" class="mt-2 mb-2" id="romantika">Romantika</button>
+                    <button onclick="thriller()" class="mt-2 mb-2" id="thriller">Thriller</button>
+                    <button onclick="krimi()" class="mt-2 mb-2" id="krimi">Krimi</button>
+                    <button onclick="vigjatek()" class="mt-2 mb-2" id="vigjatek">Vígjáték</button>
+                </div>
+                <div class="col-sm-6 float-end mt-1 mb-4">
+                    <h2 class="text-light mt-4 mb-4">Került kategóriák</h2>
+                    <button onclick="sci_fi_2()" class="mt-2 mb-2" id="sci_fi_2">Sci-fi</button>
+                    <button onclick="drama_2()" class="mt-2 mb-2" id="drama_2">Dráma</button>
+                    <button onclick="kaland_2()" class="mt-2 mb-2" id="kaland_2">kaland</button>
+                    <button onclick="akcio_2()" class="mt-2 mb-2" id="akcio_2">Akció</button>
+                    <button onclick="romantika_2()" class="mt-2 mb-2" id="romantika_2">Romantika</button>
+                    <button onclick="thriller_2()" class="mt-2 mb-2" id="thriller_2">Thriller</button>
+                    <button onclick="krimi_2()" class="mt-2 mb-2" id="krimi_2">Krimi</button>
+                    <button onclick="vigjatek_2()" class="mt-2 mb-2" id="vigjatek_2">Vígjáték</button>
+                </div>
+                <div>
+                    <button class="justify-content-center mt-5 btn btn-outline-warning" onclick="kereses()">Keresés</button>
+                    <button class="justify-content-center mt-5 btn btn-outline-warning" onclick="torles()">Törlés</button>
+                </div>
+                <div>
+                    <h3 class="text-light" id="kereses"></h3>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-sm-12 text-light text-center">
-    <input type="checkbox" name="sci-fi" id="sci-fi"><span>Sci-fi</span>
-    <input type="checkbox" name="akció" id="akcio"><span>Akció</span>
-    <input type="checkbox" name="romantika" id="romantika"><span>Romantika</span>
-    <input type="checkbox" name="thriller" id="thriller"><span>Thriller</span>
-    <input type="checkbox" name="kaland" id="kaland"><span>Kaland</span>
-    <input type="checkbox" name="dráma" id="drama"><span>Dráma</span>
-    <input type="checkbox" name="vígjáték" id="vigjatek"><span>Vígjáték</span>
-    <input type="checkbox" name="krimi" id="krimi"><span>Krími</span>
-   </div>
-   <br>
-   <div class="center">
-    <button id="valogat" class="btn btn-outline-warning button-center">Keresés</button>
-  </div>
-   <br>
-    <p class="text-light text-center" id="filmek">Válassz ki előtte egy műfajt vagy többet!</p>
-    <script src="javascript.js"></script>
+
 </body>
 </html>
