@@ -56,7 +56,6 @@ document.getElementById("valogat").onclick = function valogat(){
     const drama2 =     "dráma"
     const vigjatek2 =  "vígjáték"
     const krimi2 ="krimi"
-   const fajtak2 = [scifi2, akcio2, romantika2,thriller2,kaland2,drama2,vigjatek2,krimi2]
 
    let kereses = fajtak2
    let kiiro = ""
