@@ -441,23 +441,26 @@
 	        for (let x in filmek){
 
 		        if (filmek[x].kat1==kereseskat1 || filmek[x].kat2==kereseskat1 || filmek[x].kat3==kereseskat1){
-                    if (filmek[x].kat1==nokereseskat1 || filmek[x].kat2==nokereseskat1 || filmek[x].kat3==nokereseskat1 || filmek[x].kat1==nokereseskat2 || filmek[x].kat2==nokereseskat2 || filmek[x].kat3==nokereseskat2){
+                    if (filmek[x].kat1!=nokereseskat1 || filmek[x].kat2!=nokereseskat1 || filmek[x].kat3!=nokereseskat1 || filmek[x].kat1!=nokereseskat2 || filmek[x].kat2!=nokereseskat2 || filmek[x].kat3!=nokereseskat2){
+                        
+                        kiiras+="<br>"+filmek[x].cim+"<br>"
+                    }else{
                         continue;
                     }
-			        kiiras+="<br>"+filmek[x].cim+"<br>"
-		        }
-		
-		        if(filmek[x].kat1==kereseskat2 || filmek[x].kat2==kereseskat2 || filmek[x].kat3==kereseskat2){
-                    if(filmek[x].kat1==kereseskat1 || filmek[x].kat2==kereseskat1 || filmek[x].kat3==kereseskat1){
+                }else if(filmek[x].kat1==kereseskat2 || filmek[x].kat2==kereseskat2 || filmek[x].kat3==kereseskat2){
+                    if (filmek[x].kat1!=nokereseskat1 || filmek[x].kat2!=nokereseskat1 || filmek[x].kat3!=nokereseskat1 || filmek[x].kat1!=nokereseskat2 || filmek[x].kat2!=nokereseskat2 || filmek[x].kat3!=nokereseskat2){
+                        if (filmek[x].kat1!=kereseskat1 || filmek[x].kat2!=kereseskat1 || filmek[x].kat3!=kereseskat1){
 				            continue;
                             
+                        }else{
+                            kiiras+="<br>"+filmek[x].cim+"<br>"
                         }
-                        if(filmek[x].kat1==nokereseskat1 || filmek[x].kat2==nokereseskat1 || filmek[x].kat3==nokereseskat1 || filmek[x].kat1==nokereseskat2 || filmek[x].kat2==nokereseskat2 || filmek[x].kat3==nokereseskat2){
+			        }else{
                         continue;
-			            }
-			            kiiras+="<br>"+filmek[x].cim+"<br>"
-		        }	
-	        }
+                    }
+                }
+            }
+	        
 	        document.getElementById("kereses").innerHTML = kiiras
         }
 
