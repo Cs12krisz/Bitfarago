@@ -145,7 +145,7 @@ document.getElementById("valogat").onclick = function valogat(){
         for(let x in filmek){
             if(fajtak1[0] == true){
                 console.log(scifi2)
-                if(kereses == filmek[x].kat1 || filmek[x].kat2 || filmek[x].kat3){
+                if(scifi2 == filmek[x].kat1 || filmek[x].kat2 || filmek[x].kat3){
                 kiiro = filmek[x].cim
                 document.getElementById("filmek").innerHTML = kiiro
             }
