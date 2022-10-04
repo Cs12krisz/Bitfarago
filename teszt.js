@@ -48,14 +48,14 @@ document.getElementById("valogat").onclick = function valogat(){
 
     const fajtak1 = [scifi1, akcio1, romantika1,thriller1,kaland1,drama1,vigjatek1,krimi1]
    
-    const scifi2 =     document.getElementById("sci-fi")
-    const akcio2 =     document.getElementById("akcio")
-    const romantika2 = document.getElementById("romantika")
-    const thriller2 =  document.getElementById("thriller")
-    const kaland2 =    document.getElementById("kaland")
-    const drama2 =     document.getElementById("drama")
-    const vigjatek2 =  document.getElementById("vigjatek")
-    const krimi2 =     document.getElementById("krimi")
+    const scifi2 =     "sci-fi"
+    const akcio2 =     "akcio"
+    const romantika2 = "romantika"
+    const thriller2 =  "thriller"
+    const kaland2 = "kaland"
+    const drama2 =     "dráma"
+    const vigjatek2 =  "vígjáték"
+    const krimi2 ="krimi"
    const fajtak2 = [scifi2, akcio2, romantika2,thriller2,kaland2,drama2,vigjatek2,krimi2]
 
    let kereses = fajtak2
@@ -144,7 +144,7 @@ document.getElementById("valogat").onclick = function valogat(){
    */
         for(let x in filmek){
             if(fajtak1[0] == true){
-                console.log(kereses)
+                console.log(scifi2)
                 if(kereses == filmek[x].kat1 || filmek[x].kat2 || filmek[x].kat3){
                 kiiro = filmek[x].cim
                 document.getElementById("filmek").innerHTML = kiiro
