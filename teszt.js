@@ -58,8 +58,8 @@ document.getElementById("valogat").onclick = function valogat(){
     const krimi2 =     document.getElementById("krimi")
    const fajtak2 = [scifi2, akcio2, romantika2,thriller2,kaland2,drama2,vigjatek2,krimi2]
 
-   kereses = fajtak2
-kiiro = ""
+   let kereses = fajtak2
+   let kiiro = ""
     /*
         if (fajtak[0] == true){
             document.getElementById("filmek").innerHTML = `${filmek[0]} ${filmek[1]} ${filmek[2]}`;
