@@ -436,6 +436,11 @@
             }
         }
 
+        function gombok(){
+            torles()
+            kereses()
+        }
+
         function kereses(){
 
 	        for (let x in filmek){
@@ -443,6 +448,7 @@
 		        if (filmek[x].kat1==kereseskat1 || filmek[x].kat2==kereseskat1 || filmek[x].kat3==kereseskat1 || filmek[x].kat1==kereseskat2 || filmek[x].kat2==kereseskat2 || filmek[x].kat3==kereseskat2){
                     if (filmek[x].kat1==nokereseskat1 || filmek[x].kat2==nokereseskat1 || filmek[x].kat3==nokereseskat1 || filmek[x].kat1==nokereseskat2 || filmek[x].kat2==nokereseskat2 || filmek[x].kat3==nokereseskat2){
                         continue;
+                        
                     }else{
                         kiiras+="<br>"+filmek[x].cim+"<br>"
                     }
@@ -456,8 +462,9 @@
         function torles(){
             if(kiiras != ""){
 
-
                 document.getElementById("kereses").innerHTML = ""
+
+                kiiras=""
 
                 kereseskat1 = ""
                 kereseskat2 = ""
@@ -485,8 +492,8 @@
                 document.getElementById("krimi_2").style.backgroundColor = "white"
                 document.getElementById("vigjatek_2").style.backgroundColor = "white"
             
+            }
         }
-     }
 
     </script>
 
@@ -524,8 +531,7 @@
                     <button onclick="vigjatek_2()" class="mt-2 mb-2" id="vigjatek_2">Vígjáték</button>
                 </div>
                 <div>
-                    <button class="justify-content-center mt-5 btn btn-outline-warning" onclick="kereses()">Keresés</button>
-                    <button class="justify-content-center mt-5 btn btn-outline-warning" onclick="torles()">Törlés</button>
+                    <button class="justify-content-center mt-5 btn btn-outline-warning" onclick="gombok()">Keresés/Újra keresés</button>
                 </div>
                 <div>
                     <h3 class="text-light" id="kereses"></h3>
